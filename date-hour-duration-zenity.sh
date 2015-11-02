@@ -1,4 +1,5 @@
 #!/bin/bash
+# Requires zenity https://help.gnome.org/users/zenity/stable/
 FECHA=$(zenity --calendar --text="Seleccione fecha del evento" --date-format=%Y-%m-%d)
 INICIO=$(zenity --entry --text="Indique hora de comienzo, ej: 21:30")
 DURACION=$(zenity --entry --text="Indique duración del evento en horas")
