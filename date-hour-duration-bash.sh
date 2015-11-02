@@ -5,16 +5,16 @@
 # $3 - 4 (horas)
 
 ## No funciona en MacOSX
-## Requiere testing Linux
 
-FECHA=$1
-INICIO=$2
-DURACION=$3
-echo $FECHA
-echo $INICIO
-echo $DURACION
-FIN=`echo $(date --date "$FECHA $INICIO" +%s) + $(($DURACION*3600)) | bc -l`
-echo $FIN
-echo "Evento finaliza el: $(date -d@$FIN +%d/%b/%Y' a las '%H:%M)"
+if [ ! "$#" ==  "3" ]; then
+	echo "Uso: $0 2015-11-03 09:00 3"
+	exit 1
+else 
+	FECHA=$1
+	INICIO=$2
+	DURACION=$3
+	FIN=`echo $(date --date "$FECHA $INICIO" +%s) + $(($DURACION*3600)) | bc -l`
+	echo "Evento finaliza el: $(date -d@$FIN +%d/%b/%Y' a las '%H:%M)"
+fi
 exit 0
 
