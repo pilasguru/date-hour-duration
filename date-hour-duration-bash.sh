@@ -19,7 +19,7 @@ else
 		echo "Require GNU date"
 		exit 1 
 	fi
-	if [[ $1 =~ [0-9]{4}-(0[1-9]|1[12])-([0-2][1-9]|3[01]) ]]; then 
+	if [[ $1 =~ [0-9]{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[01]) ]]; then 
 		FECHA=$1
 	else
 		echo "ERROR en la fecha de inicio, debe ser AAAA-MM-DD"
